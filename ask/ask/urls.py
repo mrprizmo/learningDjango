@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import include, url
+from django.urls import url
 from qa.views import test
 
 urlpatterns = [
@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^signup/?$', test),
     url(r'^popular/?$', test),
     url(r'^ask/', test),
-    url(r'^question/(<(?P<id>[1-9]+[0-9]*)>)/?$', include('qa.urls'))
+    url(r'^question/(<(?P<id>[1-9]+[0-9]*)>)/?$', test)
 ]
