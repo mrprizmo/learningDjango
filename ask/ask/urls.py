@@ -5,9 +5,9 @@ from qa.views import test
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', test),
-    path('login/', test),
-    path('signup/', test),
-    path('popular/', test),
-    path('ask/', test),
-    re_path(r'^question/(<(?P<id>[1-9]+[0-9]*)>)/?', include('qa.urls'))
+    re_path(r'^login/?$', test),
+    re_path(r'^signup/?$', test),
+    re_path(r'^popular/?$', test),
+    re_path(r'^ask/', test),
+    re_path(r'^question/(<(?P<id>[1-9]+[0-9]*)>)/?$', include('qa.urls'))
 ]
