@@ -1,13 +1,13 @@
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import include, url
 from qa.views import test
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', test),
-    re_path(r'^login/?$', test),
-    re_path(r'^signup/?$', test),
-    re_path(r'^popular/?$', test),
-    re_path(r'^ask/', test),
-    re_path(r'^question/(<(?P<id>[1-9]+[0-9]*)>)/?$', include('qa.urls'))
+    url(r'^admin/$', admin.site.urls),
+    url(r'^$', test),
+    url(r'^login/?$', test),
+    url(r'^signup/?$', test),
+    url(r'^popular/?$', test),
+    url(r'^ask/', test),
+    url(r'^question/(<(?P<id>[1-9]+[0-9]*)>)/?$', include('qa.urls'))
 ]
