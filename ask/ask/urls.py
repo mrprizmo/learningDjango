@@ -9,4 +9,5 @@ urlpatterns = [
     path('popular/', test),
     path('ask/', test),
     re_path(r'^question/(<?P<id>[1-9]+[0-9]*>)/', include('qa.urls'))
+
 ]
